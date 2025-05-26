@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>英雄联盟答题挑战</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 0 auto; padding: 20px; }
+        select, button { padding: 10px; font-size: 16px; margin: 10px 0; width: 100%; }
+        button { background: #e74c3c; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>🏆 英雄联盟答题挑战 🏆</h1>
+    <form method="POST" action="/start">
+        <select name="team" required>
+            <option value="">-- 选择你的战队 --</option>
+            {% for team in teams %}
+            <option value="{{ team.id }}">{{ team.name }} ({{ team.points }}分)</option>
+            {% endfor %}
+        </select>
+        <button type="submit">开始挑战</button>
+    </form>
+
+</body>
+</html>

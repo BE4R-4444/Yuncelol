@@ -1,0 +1,100 @@
+{
+    "teams": [
+        {
+            "id": 1,
+            "name": "BLG",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20240920155521/84c7e3575f7250a7124b59769e18d1ef/0",
+            "points": 28275
+        },
+        {
+            "id": 2,
+            "name": "TES",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20240920155538/5beb948638f00bcda68fc4942e3f0a51/0",
+            "points": 3015
+        },
+        {
+            "id": 3,
+            "name": "IG",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20230103152918/562affbb9f99b0e472644f93a19291e7/0",
+            "points": 1557
+        },
+        {
+            "id": 4,
+            "name": "JDG",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20230921143554/1e5189e914e40bfe18045bccbfc7ef82/0",
+            "points": 50
+        },
+        {
+            "id": 5,
+            "name": "WBG",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20240920155612/8df4b2b15f3e97f047ac978711134748/0",
+            "points": 49
+        },
+        {
+            "id": 6,
+            "name": "NIP",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20230103152746/c8a8f59fadc0da0bda0c4997e3f62afb/0",
+            "points": 43
+        },
+        {
+            "id": 7,
+            "name": "LNG",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20240920155556/f4510f27cb1d914d0d3204c8dbab6217/0",
+            "points": 40
+        },
+        {
+            "id": 8,
+            "name": "RNG",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20230103152940/3cbf5f4d26c24711602996fd3f3b0eca/0",
+            "points": -800
+        },
+        {
+            "id": 9,
+            "name": "EDG",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20230103153103/7c5a8db3be3d7c93114ac47a801d64cb/0",
+            "points": 777
+        },
+        {
+            "id": 10,
+            "name": "T1",
+            "logo": "https://s-qwer.op.gg/images/teams/white/LCK/T1.png?image=w_112,f_webp",
+            "points": 444
+        },
+        {
+            "id": 11,
+            "name": "HLE",
+            "logo": "https://s-qwer.op.gg/images/teams/white/LCK/HLE.png?image=w_112,f_webp",
+            "points": 216
+        },
+        {
+            "id": 12,
+            "name": "Gen.G",
+            "logo": "https://s-qwer.op.gg/images/teams/white/LCK/GEN.png?image=w_112,f_webp",
+            "points": 11037
+        },
+        {
+            "id": 13,
+            "name": "DK",
+            "logo": "https://s-qwer.op.gg/images/teams/white/LCK/DK.png?image=w_112,f_webp",
+            "points": 206
+        },
+        {
+            "id": 14,
+            "name": "WE",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20230103153050/5c22150153baa973f73adf4909a041ec/0",
+            "points": 200
+        },
+        {
+            "id": 15,
+            "name": "AL",
+            "logo": "https://img.crawler.qq.com/lolwebvideo/20220113160852/948dda878f0b042d290d6bdc84325e22/0",
+            "points": 196
+        },
+        {
+            "id": 16,
+            "name": "作者BE4R",
+            "logo": "https://huyaimg.msstatic.com/avatar/1005/7d/275b59a3b05b50ea5cb3b9c07ee94c_1000_1000_tmp.jpg?1748156474",
+            "points": 1
+        }
+    ]
+}

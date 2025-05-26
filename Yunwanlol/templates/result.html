@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>答题结果</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .correct { color: green; font-size: 24px; }
+        .wrong { color: red; font-size: 24px; }
+        button {
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .answer-info {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    {% if is_correct is not none %}
+        {% if is_correct %}
+        <p class="correct">✅ 回答正确！{{ team.name }} +1分</p>
+        {% else %}
+        <p class="wrong">❌ 回答错误</p>
+
+        {% endif %}
+    {% endif %}
+
+    <p>{{ team.name }} 当前积分: {{ team.points }}</p>
+
+    {% if q_index + 1 < total %}
+    <a href="{{ url_for('questions', team_id=team.id, q_index=q_index+1) }}">
+        <button>下一题</button>
+    </a>
+    {% else %}
+    <p>答题已完成！</p>
+    {% endif %}
+
+    <a href="{{ url_for('yunwanlol') }}"><button>返回首页</button></a>
+</body>
+</html>

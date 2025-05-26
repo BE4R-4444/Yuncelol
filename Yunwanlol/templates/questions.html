@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <title>第 {{ q_index + 1 }} 题</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .question { font-size: 20px; margin: 20px 0; }
+        .option { display: block; padding: 10px; margin: 5px 0; background: #f5f5f5; }
+        button { padding: 10px; background: #3498db; color: white; border: none; width: 100%; }
+    </style>
+</head>
+<body>
+    <h2>{{ team.name }} ({{ team.points }}分)</h2>
+    <div class="question">第 {{ q_index + 1 }} 题: {{ question.question }}</div>
+
+    <form method="POST">
+        {% for option in question.options %}
+        <label class="option">
+            <input type="radio" name="answer" value="{{ loop.index0 }}" required>
+            {{ ['A','B','C','D'][loop.index0] }}. {{ option }}
+        </label>
+        {% endfor %}
+        <button type="submit">提交答案</button>
+    </form>
+</body>
+</html>

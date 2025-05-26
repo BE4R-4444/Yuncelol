@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>队伍排行榜</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+            color: #333;
+        }
+
+        /* 标题样式 */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        /* 排行榜容器 */
+        .leaderboard {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* 表头样式 */
+        .leaderboard-header {
+            display: grid;
+            grid-template-columns: 50px 1fr 70px;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            font-size: 0.9em;
+        }
+
+        /* 队伍行样式 */
+        .team-row {
+            display: grid;
+            grid-template-columns: 50px 1fr 70px;
+            align-items: center;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9em;
+        }
+
+        /* 奇数行背景色 */
+        .team-row:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        /* 前三名特殊样式 */
+        .team-row.top-1 { background-color: #fffacd; }  /* 第一名金色 */
+        .team-row.top-2 { background-color: #f0f0f0; }  /* 第二名银色 */
+
+
+        /* 排名样式 */
+        .rank {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 队标样式 */
+        .team-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* 队名容器 */
+        .team-info {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* 积分样式 */
+        .points {
+            font-weight: bold;
+            text-align: right;
+            color: #e74c3c;
+        }
+
+        /* 响应式设计 - 小屏幕适配 */
+        @media (max-width: 500px) {
+            .leaderboard {
+                max-width: 100%;
+                border-radius: 0;
+            }
+            .leaderboard-header, .team-row {
+                padding: 8px 10px;
+                font-size: 0.85em;
+            }
+            .team-logo {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🏆 队伍排行榜 🏆</h1>
+
+    <div class="leaderboard">
+        <!-- 表头 -->
+        <div class="leaderboard-header">
+            <div>排名</div>
+            <div>队伍名称</div>
+            <div style="text-align: right;">答题积分</div>
+        </div>
+
+        <!-- 队伍列表 -->
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            <div class="team-row top-1">
+                <div class="rank">1</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20240920155521/84c7e3575f7250a7124b59769e18d1ef/0" alt="BLG" class="team-logo">
+                    <span>BLG</span>
+                </div>
+                <div class="points">28275</div>
+            </div>
+
+            <div class="team-row top-2">
+                <div class="rank">2</div>
+                <div class="team-info">
+                    <img src="https://s-qwer.op.gg/images/teams/white/LCK/GEN.png?image=w_112,f_webp" alt="Gen.G" class="team-logo">
+                    <span>Gen.G</span>
+                </div>
+                <div class="points">11037</div>
+            </div>
+
+            <div class="team-row top-3">
+                <div class="rank">3</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20240920155538/5beb948638f00bcda68fc4942e3f0a51/0" alt="TES" class="team-logo">
+                    <span>TES</span>
+                </div>
+                <div class="points">3015</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">4</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20230103152918/562affbb9f99b0e472644f93a19291e7/0" alt="IG" class="team-logo">
+                    <span>IG</span>
+                </div>
+                <div class="points">1557</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">5</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20230103153103/7c5a8db3be3d7c93114ac47a801d64cb/0" alt="EDG" class="team-logo">
+                    <span>EDG</span>
+                </div>
+                <div class="points">777</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">6</div>
+                <div class="team-info">
+                    <img src="https://s-qwer.op.gg/images/teams/white/LCK/T1.png?image=w_112,f_webp" alt="T1" class="team-logo">
+                    <span>T1</span>
+                </div>
+                <div class="points">444</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">7</div>
+                <div class="team-info">
+                    <img src="https://s-qwer.op.gg/images/teams/white/LCK/HLE.png?image=w_112,f_webp" alt="HLE" class="team-logo">
+                    <span>HLE</span>
+                </div>
+                <div class="points">216</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">8</div>
+                <div class="team-info">
+                    <img src="https://s-qwer.op.gg/images/teams/white/LCK/DK.png?image=w_112,f_webp" alt="DK" class="team-logo">
+                    <span>DK</span>
+                </div>
+                <div class="points">206</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">9</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20230103153050/5c22150153baa973f73adf4909a041ec/0" alt="WE" class="team-logo">
+                    <span>WE</span>
+                </div>
+                <div class="points">200</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">10</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20220113160852/948dda878f0b042d290d6bdc84325e22/0" alt="AL" class="team-logo">
+                    <span>AL</span>
+                </div>
+                <div class="points">196</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">11</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20230921143554/1e5189e914e40bfe18045bccbfc7ef82/0" alt="JDG" class="team-logo">
+                    <span>JDG</span>
+                </div>
+                <div class="points">50</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">12</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20240920155612/8df4b2b15f3e97f047ac978711134748/0" alt="WBG" class="team-logo">
+                    <span>WBG</span>
+                </div>
+                <div class="points">49</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">13</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20230103152746/c8a8f59fadc0da0bda0c4997e3f62afb/0" alt="NIP" class="team-logo">
+                    <span>NIP</span>
+                </div>
+                <div class="points">43</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">14</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20240920155556/f4510f27cb1d914d0d3204c8dbab6217/0" alt="LNG" class="team-logo">
+                    <span>LNG</span>
+                </div>
+                <div class="points">40</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">15</div>
+                <div class="team-info">
+                    <img src="https://huyaimg.msstatic.com/avatar/1005/7d/275b59a3b05b50ea5cb3b9c07ee94c_1000_1000_tmp.jpg?1748156474" alt="作者BE4R" class="team-logo">
+                    <span>作者BE4R</span>
+                </div>
+                <div class="points">1</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank">16</div>
+                <div class="team-info">
+                    <img src="https://img.crawler.qq.com/lolwebvideo/20230103152940/3cbf5f4d26c24711602996fd3f3b0eca/0" alt="RNG" class="team-logo">
+                    <span>RNG</span>
+                </div>
+                <div class="points">-800</div>
+            </div></div>
+            </div></div>
+            </div></div>
+            </div></div>
+            </div></div>
+            </div></div>
+
+
+</body>
+</html>
