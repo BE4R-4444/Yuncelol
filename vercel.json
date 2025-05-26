@@ -12,14 +12,13 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "Yunwanlol/server.py" 
-    }
-  ],
-  "rewrites": [
+      "src": "/static/(.*)",
+      "dest": "Yunwanlol/static/$1",
+      "status": 404  
+    },
     {
-      "source": "/",
-      "destination": "/Yunwanlol/server.py"  
+      "src": "/(.*)",
+      "dest": "Yunwanlol/server.py"  
     }
   ]
 }
