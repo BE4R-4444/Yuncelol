@@ -2,18 +2,24 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.py",       
-      "use": "@vercel/python"   
+      "src": "Yunwanlol/server.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "includeFiles": "Yunwanlol/templates/**/*"  // 包含模板文件（如果有）
+      }
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",   
-      "dest": "static/$1"       
-    },
+      "src": "/(.*)",
+      "dest": "Yunwanlol/server.py"  // 所有请求由Flask处理
+    }
+  ],
+  "rewrites": [
     {
-      "src": "/(.*)",           
-      "dest": "server.py"      
+      "source": "/",
+      "destination": "/Yunwanlol/server.py"  // 根路径重定向
     }
   ]
 }
