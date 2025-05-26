@@ -6,20 +6,20 @@
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
-        "includeFiles": "Yunwanlol/templates/**/*"  // 包含模板文件（如果有）
+        "includeFiles": "Yunwanlol/templates/**/*"  
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "Yunwanlol/server.py"  // 所有请求由Flask处理
+      "dest": "Yunwanlol/server.py" 
     }
   ],
   "rewrites": [
     {
       "source": "/",
-      "destination": "/Yunwanlol/server.py"  // 根路径重定向
+      "destination": "/Yunwanlol/server.py"  
     }
   ]
 }
