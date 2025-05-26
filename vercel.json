@@ -2,14 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.py",
-      "use": "@vercel/python"
+      "src": "server.py",       
+      "use": "@vercel/python"   
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "server.py"  // 替换为你的入口文件（如 app.py、main.py）
+      "src": "/static/(.*)",   
+      "dest": "static/$1"       
+    },
+    {
+      "src": "/(.*)",           
+      "dest": "server.py"      
     }
   ]
 }
