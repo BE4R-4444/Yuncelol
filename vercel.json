@@ -32,15 +32,10 @@
       }
     }
   ],
-  "regions": ["hkg1"],
+  "regions": ["hkg1"],  
   "env": {
     "PYTHONUNBUFFERED": "1",
-    "EDGE_CACHE": "true",
-    "BROTLI_COMPRESSION": "true"
-  },
-  "cdn": {
-    "provider": "tencent",
-    "china": true
+    "EDGE_CACHE": "true"
   },
   "framework": {
     "name": "other",
@@ -52,7 +47,7 @@
     "cache": {
       "html": {
         "ttl": 3600,
-        "staleWhileRevalidate": 300
+        "staleWhileRevalidate": 60
       },
       "static": {
         "ttl": 31536000,
@@ -62,12 +57,21 @@
     "optimization": {
       "brotli": true,
       "http2": true,
-      "prefetch": true,
       "minify": {
         "html": true,
         "css": true,
         "js": true
       }
     }
-  }
+  },
+  "cache": [
+    {
+      "regex": "\\.(js|css|png|jpg|jpeg|gif|ico|webp|woff2)$",
+      "maxAge": 31536000
+    },
+    {
+      "regex": "^/$",
+      "maxAge": 3600
+    }
+  ]
 }
