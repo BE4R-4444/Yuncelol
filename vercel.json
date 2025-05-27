@@ -24,7 +24,8 @@
       "dest": "server.py",
       "headers": {
         "Cache-Control": "no-cache",
-        "CDN-Cache-Control": "no-cache"
+        "CDN-Cache-Control": "no-cache",
+        "Vary": "Accept-Encoding"
       }
     }
   ],
@@ -35,17 +36,5 @@
   "framework": {
     "cleanUrls": true,
     "trailingSlash": false
-  },
-  "edge": {
-    "cache": {
-      "static": {
-        "ttl": 31536000,
-        "staleWhileRevalidate": 86400
-      }
-    },
-    "optimization": {
-      "brotli": true,
-      "minify": true
-    }
   }
 }
