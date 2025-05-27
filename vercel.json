@@ -5,20 +5,28 @@
       "src": "server.py",
       "use": "@vercel/python",
       "config": {
-        "runtime": "python3.9", 
-        "includeFiles": "templates/**/*,static/**/*"
+        "runtime": "python3.9",
+        "maxLambdaSize": "15mb",
+        "includeFiles": "templates/**/*,static/**/*,*.json"
       }
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      },
       "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "server.py"
+      "dest": "server.py",
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     }
   ],
-  "regions": ["hkg1"]
+  "regions": ["hkg1"],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/server.py" }
+  ]
 }
