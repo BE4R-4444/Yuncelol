@@ -20,12 +20,14 @@
     },
     {
       "src": "/(.*)",
-      "dest": "server.py"
+      "dest": "server.py",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     }
   ],
   "regions": ["hkg1"],
   "env": {
     "PYTHONUNBUFFERED": "1"
-  },
-  "framework": null  
+  }
 }
