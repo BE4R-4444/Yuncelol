@@ -46,7 +46,7 @@
   "edge": {
     "cache": {
       "html": {
-        "ttl": 3600,
+        "ttl": 3600,  
         "staleWhileRevalidate": 60
       },
       "static": {
@@ -63,15 +63,5 @@
         "js": true
       }
     }
-  },
-  "cache": [
-    {
-      "regex": "\\.(js|css|png|jpg|jpeg|gif|ico|webp|woff2)$",
-      "maxAge": 31536000
-    },
-    {
-      "regex": "^/$",
-      "maxAge": 3600
-    }
-  ]
+  }
 }
