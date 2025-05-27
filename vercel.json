@@ -24,27 +24,20 @@
       "dest": "server.py",
       "headers": {
         "Cache-Control": "no-cache",
-        "CDN-Cache-Control": "no-cache",
-        "Vary": "Accept-Encoding"
+        "CDN-Cache-Control": "no-cache"
       }
     }
   ],
-  "regions": ["hkg1"],  
+  "regions": ["hkg1"],
   "env": {
     "PYTHONUNBUFFERED": "1"
   },
   "framework": {
-    "name": "other",
-    "version": "0.0.0",
     "cleanUrls": true,
     "trailingSlash": false
   },
   "edge": {
     "cache": {
-      "html": {
-        "ttl": 60,  
-        "staleWhileRevalidate": 10
-      },
       "static": {
         "ttl": 31536000,
         "staleWhileRevalidate": 86400
@@ -52,12 +45,7 @@
     },
     "optimization": {
       "brotli": true,
-      "http2": true,
-      "minify": {
-        "html": true,
-        "css": true,
-        "js": true
-      }
+      "minify": true
     }
   }
 }
