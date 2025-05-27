@@ -2,23 +2,76 @@
   "version": 2,
   "builds": [
     {
-      "src": "Yunwanlol/server.py",
+      "src": "server.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
-        "includeFiles": "Yunwanlol/templates/**/*"  
+        "runtime": "python3.9",
+        "includeFiles": "templates/**/*, *.json, static/**/*"
       }
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "Yunwanlol/static/$1",
-      "status": 404  
+      "dest": "/static/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "CDN-Cache-Control": "public, max-age=31536000",
+        "X-Accel-Expires": "31536000"
+      }
     },
     {
-      "src": "/(.*)",
-      "dest": "Yunwanlol/server.py"  
+      "src": "/(.*)", 
+      "dest": "server.py",
+      "headers": {
+        "Cache-Control": "public, max-age=600",
+        "CDN-Cache-Control": "public, max-age=600",
+        "Edge-Cache-Tag": "dynamic",
+        "Vary": "Accept-Encoding"
+      }
     }
-  ]
+  ],
+  "regions": ["hkg1"],
+  "env": {
+    "PYTHONUNBUFFERED": "1",
+    "EDGE_CACHE": "true"
+  },
+  "cache": [
+    {
+      "regex": "\\.(js|css|png|jpg|jpeg|gif|ico|webp|woff2)$",
+      "maxAge": 31536000
+    },
+    {
+      "regex": "^/$",
+      "maxAge": 600
+    }
+  ],
+  "framework": {
+    "name": "other",
+    "version": "0.0.0",
+    "cleanUrls": true,
+    "trailingSlash": false
+  },
+  "edge": {
+    "cache": {
+      "html": {
+        "ttl": 600,
+        "staleWhileRevalidate": 60
+      },
+      "static": {
+        "ttl": 31536000,
+        "staleWhileRevalidate": 86400
+      }
+    },
+    "optimization": {
+      "brotli": true,
+      "http2": true,
+      "minify": {
+        "html": true,
+        "css": true,
+        "js": true
+      }
+    }
+  }
 }
