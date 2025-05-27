@@ -22,11 +22,11 @@
       }
     },
     {
-      "src": "/(.*)", 
+      "src": "/(.*)",
       "dest": "server.py",
       "headers": {
-        "Cache-Control": "public, max-age=600",
-        "CDN-Cache-Control": "public, max-age=600",
+        "Cache-Control": "public, max-age=3600",
+        "CDN-Cache-Control": "public, max-age=3600",
         "Edge-Cache-Tag": "dynamic",
         "Vary": "Accept-Encoding"
       }
@@ -35,18 +35,13 @@
   "regions": ["hkg1"],
   "env": {
     "PYTHONUNBUFFERED": "1",
-    "EDGE_CACHE": "true"
+    "EDGE_CACHE": "true",
+    "BROTLI_COMPRESSION": "true"
   },
-  "cache": [
-    {
-      "regex": "\\.(js|css|png|jpg|jpeg|gif|ico|webp|woff2)$",
-      "maxAge": 31536000
-    },
-    {
-      "regex": "^/$",
-      "maxAge": 600
-    }
-  ],
+  "cdn": {
+    "provider": "tencent",
+    "china": true
+  },
   "framework": {
     "name": "other",
     "version": "0.0.0",
@@ -56,8 +51,8 @@
   "edge": {
     "cache": {
       "html": {
-        "ttl": 600,
-        "staleWhileRevalidate": 60
+        "ttl": 3600,
+        "staleWhileRevalidate": 300
       },
       "static": {
         "ttl": 31536000,
@@ -67,6 +62,7 @@
     "optimization": {
       "brotli": true,
       "http2": true,
+      "prefetch": true,
       "minify": {
         "html": true,
         "css": true,
